@@ -1,6 +1,24 @@
 .product-card {
-    width: 250px;
-    border: red solid 2px;
+    width: 400px;
     display: flex;
     margin: 10px;
+    background: #D34735;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.right-side {
+    width: 100%;
+}
+
+.product-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.product-buttons button {
+    background: #3AD886;
+    height: 30px;
+    border-radius: 4px;
 }

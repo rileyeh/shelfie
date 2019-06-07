@@ -8,12 +8,23 @@ class Form extends Component {
         super(props)
 
         this.state = {
-            currentID: null,
+            id: null,
             name: "",
             price: 0,
-            imgurl: ''
+            imgurl: '',
         }
     }
+
+    // componentDidUpdate(prevProps) {
+    //     let { name, price, imgurl } = this.props.currentProduct
+    //     if (this.props.currentProduct !== prevProps.currentProduct) {
+    //         this.setState({
+    //             name,
+    //             price, 
+    //             imgurl
+    //         })
+    //     }
+    // }
 
     handleChange = e => {
         let { value, name } = e.target
@@ -26,8 +37,9 @@ class Form extends Component {
         this.setState({
             name: "",
             price: 0,
-            imgurl: ''
+            imgurl: '',
         })
+        this.props.editFalse()
     }
 
     createProduct = () => {
@@ -44,32 +56,67 @@ class Form extends Component {
     render() {
         return (
             <div className="form"> 
-                <div className="inputs"> 
-                    <input 
-                        type="text" 
-                        placeholder="imageURL"
-                        name="imgurl"
-                        value={this.state.imgurl}
-                        onChange={this.handleChange}></input>
-                    <input 
-                        type="text" 
-                        placeholder="productName"
-                        name="name"
-                        value={this.state.name}
-                        onChange={this.handleChange}></input>
-                    <input 
-                        type="number" 
-                        placeholder="0"
-                        name="price"
-                        value={this.state.price}
-                        onChange={this.handleChange}></input>
-                </div>
+                {this.props.edit 
+                ?
+                <div className="save-changes">
+                    <img src={this.state.imgurl} alt="none" />
+                    <div className="inputs"> 
+                        <input 
+                            type="text" 
+                            placeholder="imageURL"
+                            name="imgurl"
+                            value={this.state.imgurl}
+                            onChange={this.handleChange}></input>
+                        <input 
+                            type="text" 
+                            placeholder="productName"
+                            name="name"
+                            value={this.state.name}
+                            onChange={this.handleChange}></input>
+                        <input 
+                            type="number" 
+                            placeholder="0"
+                            name="price"
+                            value={this.state.price}
+                            onChange={this.handleChange}></input>
+                    </div>
 
-                <div className="form-buttons">
-                    <button onClick={this.handleCancel}>Cancel</button>
-                    <button onClick={this.createProduct}>Add to Inventory</button>
+                    <div className="form-buttons">
+                        <button onClick={this.handleCancel}>Cancel</button>
+                        <button onClick={this.componentDidUpdate}>Save Changes</button>
+                    </div>
                 </div>
-            </div>
+                :
+                <div className="add-new">
+                     <img src={this.state.imgurl} alt="none" />
+                    <div className="inputs"> 
+                        <input 
+                            type="text" 
+                            placeholder="imageURL"
+                            name="imgurl"
+                            value={this.state.imgurl}
+                            onChange={this.handleChange}></input>
+                        <input 
+                            type="text" 
+                            placeholder="productName"
+                            name="name"
+                            value={this.state.name}
+                            onChange={this.handleChange}></input>
+                        <input 
+                            type="number" 
+                            placeholder="0"
+                            name="price"
+                            value={this.state.price}
+                            onChange={this.handleChange}></input>
+                    </div>
+
+                    <div className="form-buttons">
+                        <button onClick={this.handleCancel}>Cancel</button>
+                        <button onClick={this.createProduct}>Add to Inventory</button>
+                    </div>
+                </div>
+                }
+         </div>
         )
     }
 }

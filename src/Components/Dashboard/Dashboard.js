@@ -23,7 +23,8 @@ class Dashboard extends Component {
             return (
                 <Product key={item.id}
                 item={item}
-                deleteProduct={this.deleteProduct}/>
+                deleteProduct={this.deleteProduct}
+                setProduct={this.props.setProduct}/>
             )
         })
 

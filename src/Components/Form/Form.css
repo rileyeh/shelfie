@@ -1,8 +1,16 @@
 .form {
-    border: red solid 2px;
     width: 425px;
     height: 475px;
     margin: 10px;
+    background: #3AD886;
+    border-radius: 10px;
+    display: flex; 
+    justify-content: center;
+}
+
+.form img {
+    border: 1px solid #AB2A19;
+    height: 150px;
 }
 
 .inputs {
@@ -14,7 +22,7 @@
 }
 
 .inputs input {
-    width: 200px;
+    width: 375px;
 }
 
 .form-buttons {
@@ -23,6 +31,7 @@
 }
 
 .form-buttons button {
-    height: 30px;
-    border-radius: 10px;
+    height: 35px;
+    border-radius: 4px;
+    background: #ED6B5A;
 }

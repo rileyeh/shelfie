@@ -7,6 +7,15 @@ module.exports = {
         }).catch(err => console.log(err))
     },
 
+    // getProduct: (req, res) => {
+    //     const db = req.app.get('db')
+    //     const { id } = req.params
+        
+    //     db.get_product([id]).then(response => {
+    //         res.status(200).send(response)
+    //     }).catch(err => console.log(err))
+    //  },
+
     createProduct: (req, res) => {
        const db = req.app.get('db')
        const { name, price, img } = req.body
