@@ -1,0 +1,28 @@
+.form {
+    border: red solid 2px;
+    width: 425px;
+    height: 475px;
+    margin: 10px;
+}
+
+.inputs {
+    height: 300px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.inputs input {
+    width: 200px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.form-buttons button {
+    height: 30px;
+    border-radius: 10px;
+}

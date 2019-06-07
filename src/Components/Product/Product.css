@@ -1,0 +1,6 @@
+.product-card {
+    width: 250px;
+    border: red solid 2px;
+    display: flex;
+    margin: 10px;
+}
